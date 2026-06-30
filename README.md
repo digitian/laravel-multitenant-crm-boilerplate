@@ -1,4 +1,4 @@
-### Laravel Multi-Tenant CRM Boilerplate
+## Laravel Multi-Tenant CRM Boilerplate
 
 Hi everyone, my name is Huseyin. I would like to share with you this CRM boilerplate that I have developed. I just wanted to create this boilerplate in order to speed up a crm development process by having the must have features out of the box. I have been working on this for a while and I think it is time to share it with the community.
 
@@ -26,7 +26,7 @@ I have kept this project as much simple and clean as possible. I have worked for
 - resources/views/components/livewire: All of the livewire form/modal components
 - resources/css/tabler: Tabler template css files
 
-# Note: *This project uses actions and dtos in order to keep the code clean and organized. It is not a requirement to use them when you edit it.*
+* Note: *This project uses actions and dtos in order to keep the code clean and organized. It is not a requirement to use them when you edit it.*
 - app/Actions: Database transactions such as create/update
 - app/DTOs: Data transfer objects to deliver variables between layers strictly
 
@@ -34,6 +34,6 @@ I have kept this project as much simple and clean as possible. I have worked for
 
 I am open to any suggestions and feedback. Please feel free to contribute to this project.
 
-If you have any questions, you can contact me via [EMAIL_ADDRESS] or my personal website [https://huseyinemeci.com].
+If you have any questions, you can contact me via [huseyinemeci@gmail.com] or my personal website [https://huseyinemeci.com].
 
 Thank you for reading this. I hope this project helps you in your future projects.
