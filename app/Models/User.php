@@ -31,6 +31,10 @@ class User extends Authenticatable
         'country',
         'zip_code',
         'title',
+        'linkedin_url',
+        'facebook_url',
+        'x_url',
+        'instagram_url',
     ];
 
     /**
@@ -67,5 +71,35 @@ class User extends Authenticatable
         setPermissionsTeamId($previousTeamId);
 
         return $roles;
+    }
+
+    /**
+     * Get the active role display name for the user.
+     *
+     * @return string|null
+     */
+    public function activeRoleName()
+    {
+        $companyId = session('active_company_id');
+
+        if ($companyId) {
+            $roles = $this->getRolesForCompany($companyId);
+            if ($roles->isNotEmpty()) {
+                $role = $roles->first();
+
+                return $role->display_name ?? $role->name;
+            }
+        }
+
+        $previousTeamId = getPermissionsTeamId();
+        setPermissionsTeamId(null);
+        $this->unsetRelation('roles');
+
+        $role = $this->roles->first();
+
+        setPermissionsTeamId($previousTeamId);
+        $this->unsetRelation('roles');
+
+        return $role ? ($role->display_name ?? $role->name) : null;
     }
 }

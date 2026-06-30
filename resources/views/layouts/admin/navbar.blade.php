@@ -154,19 +154,29 @@
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown"
                     aria-label="Open user menu">
-                    <span class="avatar avatar-sm" style="background-image: url(./static/avatars/000m.jpg)"></span>
+                    @if (auth()->user()->profile_picture_path)
+                    <span class="avatar avatar-sm"
+                        style="background-image: url({{ Storage::url(auth()->user()->profile_picture_path) }})"></span>
+                    @else
+                    <span class="avatar avatar-sm">{{ auth()->user()->first_name[0] }}{{ auth()->user()->last_name[0]
+                        }}</span>
+                    @endif
                     <div class="d-none d-xl-block ps-2">
-                        <div>Paweł Kuna</div>
-                        <div class="mt-1 small text-secondary">UI Designer</div>
+                        <div>{{ auth()->user()->first_name }} {{ auth()->user()->last_name }}</div>
+                        <div class="mt-1 small text-secondary">{{ auth()->user()->activeRoleName() }}</div>
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow" data-bs-theme="light">
                     <a href="#" class="dropdown-item">Status</a>
-                    <a href="./profile.html" class="dropdown-item">Profile</a>
+                    <a href="{{ route('admin.profile.index') }}" class="dropdown-item">Profile</a>
                     <a href="#" class="dropdown-item">Feedback</a>
                     <div class="dropdown-divider"></div>
-                    <a href="./settings.html" class="dropdown-item">Settings</a>
-                    <a href="./sign-in.html" class="dropdown-item">Logout</a>
+                    <a href="#" class="dropdown-item">Settings</a>
+                    <form action="{{ route('logout') }}" method="post">
+                        @csrf
+                        <a href="#" class="dropdown-item"
+                            onclick="event.preventDefault(); this.closest('form').submit();">Logout</a>
+                    </form>
                 </div>
             </div>
         </div>
@@ -223,47 +233,35 @@
                     </x-nav-link>
 
                     {{-- Nav Link: Reports --}}
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="icon">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <path
-                                        d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" />
-                                    <path d="M9 5a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2" />
-                                    <path d="M9 17v-5" />
-                                    <path d="M12 17v-1" />
-                                    <path d="M15 17v-3" />
-                                </svg>
-                            </span>
-                            <span class="nav-link-title">
-                                Reports
-                            </span>
-                        </a>
-                    </li>
+                    <x-nav-link active="{{ request()->routeIs('admin.reports.*') }}"
+                        href="{{ route('admin.reports.index') }}" label="Reports">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" />
+                            <path d="M9 5a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2" />
+                            <path d="M9 17v-5" />
+                            <path d="M12 17v-1" />
+                            <path d="M15 17v-3" />
+                        </svg>
+                    </x-nav-link>
 
                     {{-- Nav Link: Support --}}
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="icon">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <path d="M8 13v-7.5a1.5 1.5 0 0 1 3 0v6.5" />
-                                    <path d="M11 5.5v-2a1.5 1.5 0 1 1 3 0v8.5" />
-                                    <path d="M14 5.5a1.5 1.5 0 0 1 3 0v6.5" />
-                                    <path
-                                        d="M17 7.5a1.5 1.5 0 0 1 3 0v8.5a6 6 0 0 1 -6 6h-2h.208a6 6 0 0 1 -5.012 -2.7a69.74 69.74 0 0 1 -.196 -.3c-.312 -.479 -1.407 -2.388 -3.286 -5.728a1.5 1.5 0 0 1 .536 -2.022a1.867 1.867 0 0 1 2.28 .28l1.47 1.47" />
-                                </svg>
-                            </span>
-                            <span class="nav-link-title">
-                                Support Requests
-                            </span>
-                        </a>
-                    </li>
+                    <x-nav-link active="{{ request()->routeIs('admin.support.*') }}"
+                        href="{{ route('admin.support.index') }}" label="Support">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M8 13v-7.5a1.5 1.5 0 0 1 3 0v6.5" />
+                            <path d="M11 5.5v-2a1.5 1.5 0 1 1 3 0v8.5" />
+                            <path d="M14 5.5a1.5 1.5 0 0 1 3 0v6.5" />
+                            <path
+                                d="M17 7.5a1.5 1.5 0 0 1 3 0v8.5a6 6 0 0 1 -6 6h-2h.208a6 6 0 0 1 -5.012 -2.7a69.74 69.74 0 0 1 -.196 -.3c-.312 -.479 -1.407 -2.388 -3.286 -5.728a1.5 1.5 0 0 1 .536 -2.022a1.867 1.867 0 0 1 2.28 .28l1.47 1.47" />
+                        </svg>
+                    </x-nav-link>
 
                 </ul>
             </div>

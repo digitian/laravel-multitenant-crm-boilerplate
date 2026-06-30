@@ -13,5 +13,10 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [AuthenticationController::class, 'authenticate'])->name('authenticate');
 });
 
+// Authenticated routes
+Route::middleware('auth')->group(function () {
+    Route::post('logout', [AuthenticationController::class, 'logout'])->name('logout');
+});
+
 // Import admin routes
 require __DIR__.'/admin.php';

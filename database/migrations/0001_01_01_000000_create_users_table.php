@@ -24,6 +24,10 @@ return new class extends Migration
             $table->text('bio')->nullable();
             $table->string('profile_picture_path')->nullable();
             $table->string('email')->unique();
+            $table->string('linkedin_url')->nullable();
+            $table->string('facebook_url')->nullable();
+            $table->string('instagram_url')->nullable();
+            $table->string('x_url')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
