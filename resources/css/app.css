@@ -1,0 +1,7 @@
+@import './tabler/demo.min.css';
+@import './tabler/tabler.min.css';
+@import './tabler/tabler-vendors.css';
+
+.fl-wrapper {
+    z-index: 9999 !important;
+}

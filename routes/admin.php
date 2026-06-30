@@ -1,0 +1,15 @@
+<?php
+
+use App\Http\Controllers\Admin\CompanyController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\UserController;
+use Illuminate\Support\Facades\Route;
+
+Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
+    Route::resource('/companies', CompanyController::class);
+    Route::post('/companies/{company}/create-user', [CompanyController::class, 'storeUser'])->name('companies.store.user');
+
+    Route::resource('/users', UserController::class);
+});
