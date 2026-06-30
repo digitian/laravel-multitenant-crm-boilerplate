@@ -16,5 +16,24 @@ I have kept this project as much simple and clean as possible. I have worked for
 - Users can be assigned in global level and company level.
 - Users can belong to multiple companies.
 - Users can have multiple roles and different titles in various companies.
+- I have received AI assistance in complex parts like multi-tenant structure to speed up and reduce possible errors. But I have built its base structure and logic entirely by myself by utilizing laravel spatie permissions package.
+
+## Folder Structure
+
+- resources/views/admin: All admin pages
+- resources/views/auth: All authentication related pages
+- resources/views/pages: All the user interface pages
+- resources/views/components/livewire: All of the livewire form/modal components
+- resources/css/tabler: Tabler template css files
+
+# Note: *This project uses actions and dtos in order to keep the code clean and organized. It is not a requirement to use them when you edit it.*
+- app/Actions: Database transactions such as create/update
+- app/DTOs: Data transfer objects to deliver variables between layers strictly
+
+### Conclusion
 
 I am open to any suggestions and feedback. Please feel free to contribute to this project.
+
+If you have any questions, you can contact me via [EMAIL_ADDRESS] or my personal website [https://huseyinemeci.com].
+
+Thank you for reading this. I hope this project helps you in your future projects.

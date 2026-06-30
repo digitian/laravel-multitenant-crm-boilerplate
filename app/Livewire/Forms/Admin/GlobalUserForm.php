@@ -48,6 +48,8 @@ class GlobalUserForm extends Form
         $this->email = $user->email;
         $this->phone = $user->phone ?? '';
 
+        setPermissionsTeamId(null);
+        $user->unsetRelation('roles')->unsetRelation('permissions');
         $isGlobal = $user->roles()->whereNull('roles.company_id')->exists();
         $this->is_global_user = $isGlobal;
 
@@ -58,6 +60,8 @@ class GlobalUserForm extends Form
             $this->companies = $user->companies()->pluck('companies.id')->toArray();
             $assignments = [];
             foreach ($user->companies as $company) {
+                setPermissionsTeamId($company->id);
+                $user->unsetRelation('roles')->unsetRelation('permissions');
                 $roles = $user->roles()->where('roles.company_id', $company->id)->pluck('roles.id')->toArray();
                 $assignments[$company->id] = [
                     'roles' => $roles,
