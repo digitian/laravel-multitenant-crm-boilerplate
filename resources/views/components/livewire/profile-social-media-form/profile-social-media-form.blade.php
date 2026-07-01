@@ -84,13 +84,19 @@
                     <input type="url" id="x_url" class="form-control" wire:model="form.x_url"
                         placeholder="Enter your x url.">
                 </div>
-            </div>
 
+        </form>
     </div>
 
     {{-- Card Footer --}}
     <div class="card-footer">
-        <button class="btn btn-primary" type="submit" form="social-media-form">Save changes</button>
+        <button class="btn btn-primary" type="submit" form="social-media-form" wire:loading.attr="disabled">
+            <div class="spinner-border spinner-border-sm text-info me-2" role="status" wire:loading>
+                <span class="visually-hidden">Saving...</span>
+            </div>
+            <span wire:loading.remove>Save changes</span>
+            <span wire:loading>Saving...</span>
+        </button>
     </div>
 
 </div>

@@ -6,5 +6,5 @@ use Livewire\Component;
 new class extends Component
 {
     #[Modelable]
-    public string $country = '';
+    public ?string $country = null;
 };

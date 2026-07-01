@@ -23,6 +23,7 @@ class User extends Authenticatable
     protected $fillable = [
         'first_name',
         'last_name',
+        'profile_picture_path',
         'email',
         'password',
         'phone',
@@ -31,6 +32,7 @@ class User extends Authenticatable
         'country',
         'zip_code',
         'title',
+        'bio',
         'linkedin_url',
         'facebook_url',
         'x_url',

@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Admin\CompanyController;
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Admin\SupportRequestController;
 use App\Http\Controllers\Admin\UserController;
@@ -18,6 +17,4 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
 
     Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
     Route::get('/support', [SupportRequestController::class, 'index'])->name('support.index');
-
-    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
 });

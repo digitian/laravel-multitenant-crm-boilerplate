@@ -104,8 +104,12 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn me-auto" data-bs-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-primary" wire:loading.class="disabled">
-                        Create
+                    <button type="submit" class="btn btn-primary" wire:loading.attr="disabled">
+                        <div class="spinner-border spinner-border-sm text-info me-2" role="status" wire:loading>
+                            <span class="visually-hidden">Saving...</span>
+                        </div>
+                        <span wire:loading.remove>Create</span>
+                        <span wire:loading>Creating...</span>
                     </button>
                 </div>
             </form>

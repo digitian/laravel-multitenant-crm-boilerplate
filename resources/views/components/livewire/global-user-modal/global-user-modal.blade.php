@@ -50,9 +50,10 @@
                                 placeholder="Enter password" @if(!$form->user) required @endif>
                             <x-input-error :messages="$errors->get('form.password')" />
                             @if($form->user)
-                                <small class="form-hint">Leave blank to keep current password. Must be at least 8 characters long.</small>
+                            <small class="form-hint">Leave blank to keep current password. Must be at least 8 characters
+                                long.</small>
                             @else
-                                <small class="form-hint">The password must be at least 8 characters long.</small>
+                            <small class="form-hint">The password must be at least 8 characters long.</small>
                             @endif
                         </div>
 
@@ -60,7 +61,8 @@
                         <div class="col-md-6">
                             <label for="global_password_confirmation" class="form-label">Confirm Password</label>
                             <input type="password" class="form-control" id="global_password_confirmation"
-                                wire:model="form.password_confirmation" placeholder="Confirm password" @if(!$form->user) required @endif>
+                                wire:model="form.password_confirmation" placeholder="Confirm password" @if(!$form->user)
+                            required @endif>
                             <x-input-error :messages="$errors->get('form.password_confirmation')" />
                         </div>
 
@@ -179,8 +181,12 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn me-auto" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary" wire:loading.class="disabled">
-                        {{ $form->user ? 'Save Changes' : 'Create User' }}
+                    <button type="submit" class="btn btn-primary" wire:loading.attr="disabled">
+                        <div class="spinner-border spinner-border-sm text-info me-2" role="status" wire:loading>
+                            <span class="visually-hidden">Saving...</span>
+                        </div>
+                        <span wire:loading.remove>{{ $form->user ? 'Save changes' : 'Create user' }}</span>
+                        <span wire:loading>{{ $form->user ? 'Saving...' : 'Creating...' }}</span>
                     </button>
                 </div>
             </form>
@@ -200,7 +206,7 @@
                         copyClassesToDropdown: false,
                         dropdownParent: 'body',
                     });
-                    
+
                     // Sync initial value from Livewire
                     let initial = $wire.$get(modelName);
                     if (initial) {

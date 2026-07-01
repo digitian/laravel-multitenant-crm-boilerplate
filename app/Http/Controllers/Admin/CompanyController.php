@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Actions\CreateCompany;
 use App\DTOs\CompanyData;
+use App\Enum\CompanySortBy;
 use App\Enum\CompanyStatus;
+use App\Enum\SortDirection;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\CreateCompanyRequest;
 use App\Http\Requests\Admin\CreateUserRequest;
@@ -17,9 +19,19 @@ class CompanyController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): View
+    public function index(Request $request): View
     {
-        $companies = Company::select(['id', 'name', 'email', 'phone', 'country', 'created_at'])->with('users')->latest()->paginate(2);
+        $sortBy = $request->enum('sort_by', CompanySortBy::class) ?? CompanySortBy::CreatedAt;
+        $orderBy = $request->enum('order_by', SortDirection::class) ?? SortDirection::Desc;
+
+        $companies = Company::select(['id', 'name', 'email', 'phone', 'country', 'created_at'])
+            ->with('users')
+            ->when($request->filled('search'), fn ($q) => $q->where('name', 'like', '%'.$request->string('search').'%'))
+            ->when($sortBy === CompanySortBy::Users, function ($q) use ($orderBy) {
+                $q->withCount('users')->orderBy('users_count', $orderBy->value);
+            }, fn ($q) => $q->orderBy($sortBy->value, $orderBy->value))
+            ->paginate(20)
+            ->withQueryString();
 
         return view('admin.companies.index', compact('companies'));
     }

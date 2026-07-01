@@ -90,7 +90,12 @@
         </form>
     </div>
     <div class="card-footer">
-        <button class="btn btn-primary" wire:loading.class="disabled" type="submit" form="edit-company-form">Apply
-            changes</button>
+        <button class="btn btn-primary" wire:loading.attr="disabled" type="submit" form="edit-company-form">
+            <div class="spinner-border spinner-border-sm text-info me-2" role="status" wire:loading>
+                <span class="visually-hidden">Saving...</span>
+            </div>
+            <span wire:loading.remove>Apply changes</span>
+            <span wire:loading>Saving...</span>
+        </button>
     </div>
 </div>

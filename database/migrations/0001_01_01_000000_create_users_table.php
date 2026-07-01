@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('address')->nullable();
             $table->string('city')->nullable();
-            $table->string('country')->nullable();
+            $table->char('country', 2)->nullable();
             $table->string('zip_code')->nullable();
             $table->text('bio')->nullable();
             $table->string('profile_picture_path')->nullable();

@@ -10,7 +10,8 @@ I have kept this project as much simple and clean as possible. I have worked for
 * Livewire 4.3
 * PHP 8.3
 * Tabler Admin Template (based on bootstrap 5)
-* Laravel Spatie Permissions
+* Laravel Spatie Permissions (for role/permission management)
+* Laravel Spatie Activitylog (for logging user actions)
 
 - Forms inside modals are automatically reset when the modal is closed.
 - Users can be assigned in global level and company level.

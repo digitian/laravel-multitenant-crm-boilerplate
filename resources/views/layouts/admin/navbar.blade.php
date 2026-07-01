@@ -167,11 +167,9 @@
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow" data-bs-theme="light">
-                    <a href="#" class="dropdown-item">Status</a>
-                    <a href="{{ route('admin.profile.index') }}" class="dropdown-item">Profile</a>
-                    <a href="#" class="dropdown-item">Feedback</a>
+                    <a href="{{ route('profile.index') }}" class="dropdown-item">Profile</a>
                     <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">Settings</a>
+                    <a href="{{ route('profile.settings') }}" class="dropdown-item">Settings</a>
                     <form action="{{ route('logout') }}" method="post">
                         @csrf
                         <a href="#" class="dropdown-item"

@@ -78,8 +78,12 @@
                         Remove from company
                     </button>
                     <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary" wire:loading.class="disabled">
-                        Save changes
+                    <button type="submit" class="btn btn-primary" wire:loading.attr="disabled">
+                        <div class="spinner-border spinner-border-sm text-info me-2" role="status" wire:loading>
+                            <span class="visually-hidden">Saving...</span>
+                        </div>
+                        <span wire:loading.remove>Save changes</span>
+                        <span wire:loading>Saving...</span>
                     </button>
                 </div>
             </form>

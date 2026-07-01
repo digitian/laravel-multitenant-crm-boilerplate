@@ -89,8 +89,12 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn me-auto" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary" wire:loading.class="disabled">
-                        Apply
+                    <button type="submit" class="btn btn-primary" wire:loading.attr="disabled">
+                        <div class="spinner-border spinner-border-sm text-info me-2" role="status" wire:loading>
+                            <span class="visually-hidden">Adding...</span>
+                        </div>
+                        <span wire:loading.remove>Add user</span>
+                        <span wire:loading>Adding...</span>
                     </button>
                 </div>
             </form>
