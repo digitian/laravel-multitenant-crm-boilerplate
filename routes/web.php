@@ -30,6 +30,8 @@ Route::middleware('auth')->group(function () {
     // Customers routes
     Route::prefix('customers')->as('customers.')->group(function () {
         Route::get('/', [CustomerController::class, 'index'])->name('index');
+        Route::get('/{customer}', [CustomerController::class, 'show'])->name('show');
+        Route::delete('/{customer}', [CustomerController::class, 'destroy'])->name('destroy');
     });
 
     // Orders routes

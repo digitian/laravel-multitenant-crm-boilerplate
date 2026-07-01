@@ -32,5 +32,27 @@
 
       </div>
     </div>
+
+    @yield('modals')
+
+    @yield('body_scripts')
+
+    {{-- Global: Reset Livewire forms when Bootstrap modals are closed --}}
+    <script>
+        document.addEventListener('hidden.bs.modal', function (event) {
+            const modal = event.target;
+            const livewireEl = modal.closest('[wire\\:id]') || modal.querySelector('[wire\\:id]');
+
+            if (livewireEl) {
+                const wireId = livewireEl.getAttribute('wire:id');
+                const component = window.Livewire?.find(wireId);
+
+                if (component) {
+                    component.call('resetForm');
+                }
+            }
+        });
+    </script>
+
   </body>
 </html>
