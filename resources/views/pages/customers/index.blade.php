@@ -100,7 +100,17 @@
                                         <td>{{ $customer->last_name }}</td>
                                         <td class="text-muted">{{ $customer->email }}</td>
                                         <td class="text-muted">{{ $customer->phone }}</td>
-                                        <td class="text-muted">{{ $customer->country }}</td>
+                                        <td class="text-muted">
+                                            @if ($customer->country)
+                                            <div class="col-md-auto d-flex align-items-center gap-1">
+                                                <span
+                                                    class="flag flag-xxs flag-country-{{ $customer->country }}"></span>
+                                                <span>{{ __('countries.'.$customer->country) }}</span>
+                                            </div>
+                                            @else
+                                            <span class="text-muted">Not specified</span>
+                                            @endif
+                                        </td>
                                         <td class="text-muted">{{ $customer->created_at->format('d M Y') }}</td>
                                         <td>
                                             <div class="d-flex gap-2">
