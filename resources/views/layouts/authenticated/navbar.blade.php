@@ -6,15 +6,16 @@
         </button>
         <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
             <a href=".">
-                <img src="{{ asset('assets/media/logo/emecisoft-logo.png') }}" width="110" height="32" alt="Emecisoft" class="navbar-brand-image">
+                <img src="{{ asset('assets/media/logo/emecisoft-logo.png') }}" width="110" height="32" alt="Emecisoft"
+                    class="navbar-brand-image">
             </a>
         </h1>
         <div class="navbar-nav flex-row order-md-last">
             <div class="d-none d-md-flex">
                 <a href="?theme=dark" class="nav-link px-0 hide-theme-dark" title="Enable dark mode"
                     data-bs-toggle="tooltip" data-bs-placement="bottom">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
-                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                        stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
                         stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                         <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -22,8 +23,8 @@
                 </a>
                 <a href="?theme=light" class="nav-link px-0 hide-theme-light" title="Enable light mode"
                     data-bs-toggle="tooltip" data-bs-placement="bottom">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
-                        viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                        stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
                         stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                         <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
@@ -34,9 +35,9 @@
                 <div class="nav-item dropdown d-none d-md-flex me-3">
                     <a href="#" class="nav-link px-0" data-bs-toggle="dropdown" tabindex="-1"
                         aria-label="Show notifications">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
-                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path
                                 d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
@@ -86,9 +87,9 @@
                                         <div class="col-auto">
                                             <a href="#" class="list-group-item-actions show">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon text-yellow"
-                                                    width="24" height="24" viewBox="0 0 24 24"
-                                                    stroke-width="2" stroke="currentColor" fill="none"
-                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                    width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                                                    stroke="currentColor" fill="none" stroke-linecap="round"
+                                                    stroke-linejoin="round">
                                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                                     <path
                                                         d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
@@ -109,9 +110,9 @@
                                         <div class="col-auto">
                                             <a href="#" class="list-group-item-actions">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon text-muted"
-                                                    width="24" height="24" viewBox="0 0 24 24"
-                                                    stroke-width="2" stroke="currentColor" fill="none"
-                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                    width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                                                    stroke="currentColor" fill="none" stroke-linecap="round"
+                                                    stroke-linejoin="round">
                                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                                     <path
                                                         d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
@@ -133,9 +134,9 @@
                                         <div class="col-auto">
                                             <a href="#" class="list-group-item-actions">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon text-muted"
-                                                    width="24" height="24" viewBox="0 0 24 24"
-                                                    stroke-width="2" stroke="currentColor" fill="none"
-                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                    width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                                                    stroke="currentColor" fill="none" stroke-linecap="round"
+                                                    stroke-linejoin="round">
                                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                                     <path
                                                         d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" />
@@ -152,19 +153,27 @@
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown"
                     aria-label="Open user menu">
-                    <span class="avatar avatar-sm" style="background-image: url(./static/avatars/000m.jpg)"></span>
+                    @if (auth()->user()->profile_picture_path)
+                    <span class="avatar avatar-sm"
+                        style="background-image: url({{ Storage::url(auth()->user()->profile_picture_path) }})"></span>
+                    @else
+                    <span class="avatar avatar-sm">{{ auth()->user()->first_name[0] }}{{ auth()->user()->last_name[0]
+                        }}</span>
+                    @endif
                     <div class="d-none d-xl-block ps-2">
-                        <div>Paweł Kuna</div>
-                        <div class="mt-1 small text-secondary">UI Designer</div>
+                        <div>{{ auth()->user()->first_name }} {{ auth()->user()->last_name }}</div>
+                        <div class="mt-1 small text-secondary">{{ auth()->user()->activeRoleName() }}</div>
                     </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow" data-bs-theme="light">
-                    <a href="#" class="dropdown-item">Status</a>
-                    <a href="./profile.html" class="dropdown-item">Profile</a>
-                    <a href="#" class="dropdown-item">Feedback</a>
+                    <a href="{{ route('profile.index') }}" class="dropdown-item">Profile</a>
                     <div class="dropdown-divider"></div>
-                    <a href="./settings.html" class="dropdown-item">Settings</a>
-                    <a href="./sign-in.html" class="dropdown-item">Logout</a>
+                    <a href="{{ route('profile.settings') }}" class="dropdown-item">Settings</a>
+                    <form action="{{ route('logout') }}" method="post">
+                        @csrf
+                        <a href="#" class="dropdown-item"
+                            onclick="event.preventDefault(); this.closest('form').submit();">Logout</a>
+                    </form>
                 </div>
             </div>
         </div>
@@ -173,93 +182,79 @@
                 <ul class="navbar-nav">
 
                     {{-- Nav Link: Home --}}
-                    <li class="nav-item">
-                        <a class="nav-link" href="./">
-                            <span
-                                class="nav-link-icon d-md-none d-lg-inline-block">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
-                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
-                                    <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
-                                    <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
-                                </svg>
-                            </span>
-                            <span class="nav-link-title">
-                                Home
-                            </span>
-                        </a>
-                    </li>
+                    <x-nav-link active="{{ request()->routeIs('dashboard') }}" href="{{ route('dashboard') }}"
+                        label="Home">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"
+                            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+                            <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                            <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+                        </svg>
+                    </x-nav-link>
 
                     {{-- Nav Link: Customers --}}
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" class="icon">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <path d="M10 13a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
-                                    <path d="M8 21v-1a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v1" />
-                                    <path d="M15 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
-                                    <path d="M17 10h2a2 2 0 0 1 2 2v1" />
-                                    <path d="M5 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
-                                    <path d="M3 13v-1a2 2 0 0 1 2 -2h2" />
-                                </svg>
-                            </span>
-                            <span class="nav-link-title">
-                                Customers
-                            </span>
-                        </a>
-                    </li>
+                    <x-nav-link active="{{ request()->routeIs('customers.*') }}" href="{{ route('customers.index') }}"
+                        label="Customers">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M10 13a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                            <path d="M8 21v-1a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v1" />
+                            <path d="M15 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                            <path d="M17 10h2a2 2 0 0 1 2 2v1" />
+                            <path d="M5 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                            <path d="M3 13v-1a2 2 0 0 1 2 -2h2" />
+                        </svg>
+                    </x-nav-link>
 
                     {{-- Nav Link: Stock --}}
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" class="icon">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <path d="M3 21v-13l9 -4l9 4v13" />
-                                    <path d="M13 13h4v8h-10v-6h6" />
-                                    <path d="M13 21v-9a1 1 0 0 0 -1 -1h-2a1 1 0 0 0 -1 1v3" />
-                                </svg>
-                            </span>
-                            <span class="nav-link-title">
-                                Stock
-                            </span>
-                        </a>
-                    </li>
+                    <x-nav-link active="{{ request()->routeIs('stock.*') }}" href="{{ route('stock.index') }}"
+                        label="Stock">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M3 21v-13l9 -4l9 4v13" />
+                            <path d="M13 13h4v8h-10v-6h6" />
+                            <path d="M13 21v-9a1 1 0 0 0 -1 -1h-2a1 1 0 0 0 -1 1v3" />
+                        </svg>
+                    </x-nav-link>
 
                     {{-- Nav Link: Orders --}}
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" class="icon">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <path
-                                        d="M5 21v-16a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v16l-3 -2l-2 2l-2 -2l-2 2l-2 -2l-3 2" />
-                                    <path
-                                        d="M14.8 8a2 2 0 0 0 -1.8 -1h-2a2 2 0 1 0 0 4h2a2 2 0 1 1 0 4h-2a2 2 0 0 1 -1.8 -1" />
-                                    <path d="M12 6v10" />
-                                </svg>
-                            </span>
-                            <span class="nav-link-title">
-                                Orders
-                            </span>
-                        </a>
-                    </li>
+                    <x-nav-link active="{{ request()->routeIs('orders.*') }}" href="{{ route('orders.index') }}"
+                        label="Orders">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M5 21v-16a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v16l-3 -2l-2 2l-2 -2l-2 2l-2 -2l-3 2" />
+                            <path d="M14.8 8a2 2 0 0 0 -1.8 -1h-2a2 2 0 1 0 0 4h2a2 2 0 1 1 0 4h-2a2 2 0 0 1 -1.8 -1" />
+                            <path d="M12 6v10" />
+                        </svg>
+                    </x-nav-link>
+
+                    {{-- Nav Link: Support --}}
+                    <x-nav-link active="{{ request()->routeIs('support.*') }}" href="{{ route('support.index') }}"
+                        label="Support">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M4 14v-3a8 8 0 1 1 16 0v3" />
+                            <path d="M18 19c0 1.657 -2.686 3 -6 3" />
+                            <path d="M4 14a2 2 0 0 1 2 -2h1a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-1a2 2 0 0 1 -2 -2v-3" />
+                            <path d="M15 14a2 2 0 0 1 2 -2h1a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-1a2 2 0 0 1 -2 -2v-3" />
+                        </svg>
+                    </x-nav-link>
 
                     {{-- Nav Link: Quick Actions (Dropdown) --}}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#navbar-help" data-bs-toggle="dropdown"
                             data-bs-auto-close="outside" role="button" aria-expanded="false">
-                            <span
-                                class="nav-link-icon d-md-none d-lg-inline-block">
+                            <span class="nav-link-icon d-md-none d-lg-inline-block">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
                                     viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
                                     stroke-linecap="round" stroke-linejoin="round">
@@ -282,9 +277,9 @@
 
                             {{-- Dropdown Item: New Customer --}}
                             <a class="dropdown-item" href="https://tabler.io/docs" target="_blank" rel="noopener">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" class="icon dropdown-item-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="icon dropdown-item-icon">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                     <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
                                     <path d="M16 19h6" />
@@ -296,9 +291,9 @@
 
                             {{-- Dropdown Item: New Product --}}
                             <a class="dropdown-item" href="./changelog.html">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" class="icon dropdown-item-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="icon dropdown-item-icon">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                     <path
                                         d="M21 12.5v-4.509a1.98 1.98 0 0 0 -1 -1.717l-7 -4.008a2.016 2.016 0 0 0 -2 0l-7 4.007c-.619 .355 -1 1.01 -1 1.718v8.018c0 .709 .381 1.363 1 1.717l7 4.008a2.016 2.016 0 0 0 2 0" />
@@ -314,9 +309,9 @@
                             {{-- Dropdown Item: New Order --}}
                             <a class="dropdown-item" href="https://github.com/tabler/tabler" target="_blank"
                                 rel="noopener">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" class="icon dropdown-item-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="icon dropdown-item-icon">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                     <path d="M14 3v4a1 1 0 0 0 1 1h4" />
                                     <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2" />
@@ -326,28 +321,6 @@
                                 New Order
                             </a>
                         </div>
-                    </li>
-
-                    {{-- Nav Link: Support --}}
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" class="icon">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <path d="M4 14v-3a8 8 0 1 1 16 0v3" />
-                                    <path d="M18 19c0 1.657 -2.686 3 -6 3" />
-                                    <path
-                                        d="M4 14a2 2 0 0 1 2 -2h1a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-1a2 2 0 0 1 -2 -2v-3" />
-                                    <path
-                                        d="M15 14a2 2 0 0 1 2 -2h1a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-1a2 2 0 0 1 -2 -2v-3" />
-                                </svg>
-                            </span>
-                            <span class="nav-link-title">
-                                Support
-                            </span>
-                        </a>
                     </li>
 
                 </ul>

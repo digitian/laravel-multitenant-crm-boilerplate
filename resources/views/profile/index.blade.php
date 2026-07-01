@@ -1,4 +1,4 @@
-@extends('layouts.admin.app')
+@extends(auth()->user()->hasRole('admin') ? 'layouts.admin.app' : 'layouts.authenticated.app')
 
 @section('content')
 {{-- Page Header --}}
@@ -18,8 +18,8 @@
                             <img src="{{ asset('storage/' . auth()->user()->profile_picture_path) }}" alt=""
                                 class="w-100 ratio ratio-1x1 rounded object-fit-cover" style="max-width: 150px;">
                             @else
-                            <div class="bg-muted-lt rounded w-100 d-flex align-items-center justify-content-center"
-                                style="height: 150px;">
+                            <div class="bg-muted-lt rounded d-flex align-items-center justify-content-center"
+                                style="height: 150px; min-width: 150px;">
                                 <span class="fs-1">{{
                                     auth()->user()->first_name[0]
                                     }}{{

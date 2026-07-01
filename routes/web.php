@@ -1,11 +1,51 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthenticationController;
+use App\Http\Controllers\Authenticated\CustomerController;
+use App\Http\Controllers\Authenticated\DashboardController;
+use App\Http\Controllers\Authenticated\OrderController;
+use App\Http\Controllers\Authenticated\StockController;
+use App\Http\Controllers\Authenticated\SupportController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('home');
+    // If not authenticated, forward to the login page
+    if (! auth()->check()) {
+        return redirect()->route('login');
+    }
+
+    // Else, forward to admin panel or user panel based on the user role
+    if (auth()->user()->hasRole('admin')) {
+        return redirect()->route('admin.dashboard');
+    }
+
+    return redirect()->route('dashboard');
+})->name('home');
+
+// Authenticated routes
+Route::middleware('auth')->group(function () {
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+    // Customers routes
+    Route::prefix('customers')->as('customers.')->group(function () {
+        Route::get('/', [CustomerController::class, 'index'])->name('index');
+    });
+
+    // Orders routes
+    Route::prefix('orders')->as('orders.')->group(function () {
+        Route::get('/', [OrderController::class, 'index'])->name('index');
+    });
+
+    // Stock routes
+    Route::prefix('stock')->as('stock.')->group(function () {
+        Route::get('/', [StockController::class, 'index'])->name('index');
+    });
+
+    // Support routes
+    Route::prefix('support')->as('support.')->group(function () {
+        Route::get('/', [SupportController::class, 'index'])->name('index');
+    });
 });
 
 // Unauthenticated routes

@@ -1,4 +1,4 @@
-@extends('layouts.admin.app')
+@extends(auth()->user()->hasRole('admin') ? 'layouts.admin.app' : 'layouts.authenticated.app')
 
 @section('content')
 {{-- Page Header --}}
