@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('customer_id')->constrained()->nullOnDelete();
+            $table->foreignId('created_by')->nullable()->constrained('users')->nullOnDelete();
+            $table->string('status')->default('pending');
+            $table->date('estimated_delivery_date')->nullable();
+            $table->string('address')->nullable();
+            $table->string('city')->nullable();
+            $table->string('postal_code')->nullable();
+            $table->string('country')->nullable();
+            $table->decimal('total_amount', 10, 2)->default(0);
+            $table->text('notes')->nullable();
             $table->timestamps();
         });
     }

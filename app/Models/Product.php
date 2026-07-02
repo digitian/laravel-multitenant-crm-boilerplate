@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
 class Product extends Model
 {
@@ -22,5 +23,12 @@ class Product extends Model
     public function createdBy(): BelongsTo
     {
         return $this->belongsTo(User::class, 'created_by');
+    }
+
+    public function orders(): MorphToMany
+    {
+        return $this->morphToMany(Order::class, 'orderable')
+            ->withPivot(['amount', 'price', 'discount', 'total'])
+            ->withTimestamps();
     }
 }

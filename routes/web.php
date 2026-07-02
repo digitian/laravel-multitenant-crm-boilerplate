@@ -37,6 +37,8 @@ Route::middleware('auth')->group(function () {
     // Orders routes
     Route::prefix('orders')->as('orders.')->group(function () {
         Route::get('/', [OrderController::class, 'index'])->name('index');
+        Route::get('/{order}', [OrderController::class, 'show'])->name('show');
+        Route::delete('/{order}', [OrderController::class, 'destroy'])->name('destroy');
     });
 
     // Stock routes
