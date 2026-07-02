@@ -46,7 +46,7 @@ class UpdateGlobalUser
                 // Ensure global roles are removed if switching to company user
                 setPermissionsTeamId(null);
                 $user->unsetRelation('roles')->unsetRelation('permissions');
-                
+
                 $globalRoles = Role::whereNull('company_id')->get();
                 $user->roles()->detach($globalRoles);
 
@@ -104,7 +104,7 @@ class UpdateGlobalUser
         foreach ($companyAssignments as $companyId => $assignment) {
             setPermissionsTeamId($companyId);
             $user->unsetRelation('roles')->unsetRelation('permissions');
-            
+
             $roleIds = $assignment['roles'] ?? [];
             if (! empty($roleIds)) {
                 $roles = Role::whereIn('id', $roleIds)->where('company_id', $companyId)->get();

@@ -1,10 +1,14 @@
 <?php
+
+use App\Models\User;
+use Illuminate\Contracts\Console\Kernel;
+
 require __DIR__.'/vendor/autoload.php';
 $app = require_once __DIR__.'/bootstrap/app.php';
-$kernel = $app->make(Illuminate\Contracts\Console\Kernel::class);
+$kernel = $app->make(Kernel::class);
 $kernel->bootstrap();
 
-$user = App\Models\User::find(15);
+$user = User::find(15);
 echo "User 15 roles in DB directly:\n";
 echo json_encode(DB::table('model_has_roles')->where('model_id', 15)->get());
 echo "\n";

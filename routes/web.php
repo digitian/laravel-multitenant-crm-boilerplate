@@ -42,6 +42,8 @@ Route::middleware('auth')->group(function () {
     // Stock routes
     Route::prefix('stock')->as('stock.')->group(function () {
         Route::get('/', [StockController::class, 'index'])->name('index');
+        Route::get('/{product}', [StockController::class, 'show'])->name('show');
+        Route::delete('/{product}', [StockController::class, 'destroy'])->name('destroy');
     });
 
     // Support routes
