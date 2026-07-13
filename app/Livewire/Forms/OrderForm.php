@@ -82,6 +82,31 @@ class OrderForm extends Form
         $this->items = array_values($this->items);
     }
 
+    public function updatedItems($value, $key): void
+    {
+        $parts = explode('.', $key);
+        $index = (int) $parts[0];
+        $field = $parts[1] ?? '';
+        $items = $this->items;
+
+        if ($field === 'product_id') {
+            if ($value) {
+                $product = Product::find((int) $value);
+                $items[$index]['price'] = $product ? (float) $product->price : 0;
+            } else {
+                $items[$index]['price'] = 0;
+            }
+            $items[$index]['discount'] = 0;
+            $items[$index]['amount'] = 1;
+        } elseif ($field === 'amount') {
+            $items[$index]['amount'] = max(1, (int) ($value ?: 1));
+        } elseif ($field === 'discount') {
+            $items[$index]['discount'] = max(0, min(100, (float) ($value ?: 0)));
+        }
+
+        $this->items = $items;
+    }
+
     /**
      * @return array<string, mixed>
      */
@@ -100,7 +125,7 @@ class OrderForm extends Form
             'items.*.product_id' => ['required', 'exists:products,id'],
             'items.*.amount' => ['required', 'integer', 'min:1'],
             'items.*.price' => ['required', 'numeric', 'min:0'],
-            'items.*.discount' => ['required', 'numeric', 'min:0'],
+            'items.*.discount' => ['required', 'numeric', 'min:0', 'max:100'],
         ];
     }
 

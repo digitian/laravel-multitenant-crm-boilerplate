@@ -1,5 +1,7 @@
 @extends('layouts.admin.app')
 
+@section('title', 'Dashboard')
+
 @section('content')
     {{-- Page Header --}}
     <x-page-header title="Dashboard" pretitle="Welcome back, Admin" />

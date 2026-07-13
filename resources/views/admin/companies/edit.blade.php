@@ -1,5 +1,6 @@
 @extends('layouts.admin.app')
 
+@section('title', $company->name . ' - Edit Company')
 @section('content')
 <div>
     {{-- Page Header --}}

@@ -59,7 +59,6 @@
                             <x-input-error :messages="$errors->get('form.postal_code')" />
                         </div>
                         <div class="col-md-2">
-                            <label class="form-label">Country</label>
                             <livewire:input-country-select wire:model="form.country" />
                             <x-input-error :messages="$errors->get('form.country')" />
                         </div>
@@ -68,45 +67,53 @@
                     <hr class="my-3">
 
                     {{-- Products Section --}}
-                    <div class="d-flex justify-content-between align-items-center mb-2">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
                         <h4 class="m-0">Order Items</h4>
-                        <button type="button" class="btn btn-sm btn-outline-primary" wire:click="form.addItem">
+
+                        {{-- Desktop button --}}
+                        <button type="button" class="btn btn-outline-primary d-none d-md-inline-block" wire:click="form.addItem">
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
                             Add Item
+                        </button>
+
+                        {{-- Mobile button --}}
+                        <button type="button" class="btn btn-icon btn-outline-primary d-md-none" wire:click="form.addItem">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 5l0 14" /><path d="M5 12l14 0" /></svg>
                         </button>
                     </div>
                     
                     @foreach($form->items as $index => $item)
+                        @php $hasProduct = !empty($form->items[$index]['product_id']); @endphp
                         <div class="row gx-2 gy-2 align-items-end mb-2 p-2 border rounded bg-light" wire:key="item-{{ $index }}">
                             <div class="col-md-4">
                                 <label class="form-label">Product</label>
                                 <select class="form-select" wire:model.live="form.items.{{ $index }}.product_id" required>
                                     <option value="">Select product...</option>
                                     @foreach($products as $product)
-                                        <option value="{{ $product->id }}">{{ $product->name }} ({{ number_format($product->price, 2) }})</option>
+                                        <option value="{{ $product->id }}">{{ $product->name }}</option>
                                     @endforeach
                                 </select>
                                 <x-input-error :messages="$errors->get('form.items.'.$index.'.product_id')" />
                             </div>
                             <div class="col-md-2">
                                 <label class="form-label">Quantity</label>
-                                <input type="number" class="form-control" wire:model.live="form.items.{{ $index }}.amount" min="1" required>
+                                <input type="number" step="1" class="form-control" wire:model.live="form.items.{{ $index }}.amount" min="1" required @disabled(!$hasProduct)>
                                 <x-input-error :messages="$errors->get('form.items.'.$index.'.amount')" />
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Discount (%)</label>
+                                <input type="number" step="0.01" class="form-control" wire:model.live="form.items.{{ $index }}.discount" min="0" max="100" required @disabled(!$hasProduct)>
+                                <x-input-error :messages="$errors->get('form.items.'.$index.'.discount')" />
                             </div>
                             <div class="col-md-2">
                                 <label class="form-label">Price</label>
-                                <input type="number" step="0.01" class="form-control" wire:model.live="form.items.{{ $index }}.price" required>
-                                <x-input-error :messages="$errors->get('form.items.'.$index.'.price')" />
-                            </div>
-                            <div class="col-md-2">
-                                <label class="form-label">Discount</label>
-                                <input type="number" step="0.01" class="form-control" wire:model.live="form.items.{{ $index }}.discount" min="0" required>
-                                <x-input-error :messages="$errors->get('form.items.'.$index.'.discount')" />
-                            </div>
-                            <div class="col-md-1">
-                                <label class="form-label">Total</label>
                                 <div class="form-control-plaintext fw-bold">
-                                    {{ number_format((($form->items[$index]['price'] ?? 0) - ($form->items[$index]['discount'] ?? 0)) * ($form->items[$index]['amount'] ?? 1), 2) }}
+                                    @php
+                                        $itemPrice    = (float) ($form->items[$index]['price'] ?? 0);
+                                        $itemDiscount = max(0, min(100, (float) ($form->items[$index]['discount'] ?? 0)));
+                                        $itemAmount   = max(1, (int) ($form->items[$index]['amount'] ?? 1));
+                                    @endphp
+                                    {{ '$' . number_format($itemPrice * (1 - $itemDiscount / 100) * $itemAmount, 2) }}
                                 </div>
                             </div>
                             <div class="col-md-1 text-end">
@@ -119,12 +126,15 @@
 
                     @php
                         $grandTotal = 0;
-                        foreach($form->items as $item) {
-                            $grandTotal += (($item['price'] ?? 0) - ($item['discount'] ?? 0)) * ($item['amount'] ?? 1);
+                        foreach ($form->items as $item) {
+                            $p = (float) ($item['price'] ?? 0);
+                            $d = max(0, min(100, (float) ($item['discount'] ?? 0)));
+                            $a = max(1, (int) ($item['amount'] ?? 1));
+                            $grandTotal += $p * (1 - $d / 100) * $a;
                         }
                     @endphp
                     <div class="text-end mb-3">
-                        <strong class="h3">Grand Total: {{ number_format($grandTotal, 2) }}</strong>
+                        <strong class="h3">Grand Total: {{ '$' . number_format($grandTotal, 2) }}</strong>
                     </div>
 
                     {{-- Notes Section --}}

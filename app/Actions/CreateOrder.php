@@ -31,7 +31,7 @@ class CreateOrder
             $orderables = [];
 
             foreach ($items as $item) {
-                $itemTotal = ($item['price'] - $item['discount']) * $item['amount'];
+                $itemTotal = ($item['price'] - ($item['price'] * $item['discount'] / 100)) * $item['amount'];
                 $totalAmount += $itemTotal;
 
                 $orderables[$item['product_id']] = [

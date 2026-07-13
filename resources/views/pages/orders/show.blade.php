@@ -1,5 +1,7 @@
 @extends('layouts.authenticated.app')
 
+@section('title', 'Order #' . $order->id . ' - Order Details')
+
 @section('content')
 <div>
     {{-- Page Header --}}
@@ -100,7 +102,7 @@
                                 </div>
                                 <div class="datagrid-item">
                                     <div class="datagrid-title">Total Amount</div>
-                                    <div class="datagrid-content h2 mb-0">{{ number_format($order->total_amount, 2) }}</div>
+                                    <div class="datagrid-content h2 mb-0">{{ '$' . number_format($order->total_amount, 2) }}</div>
                                 </div>
                                 <div class="datagrid-item">
                                     <div class="datagrid-title">Customer</div>
@@ -193,10 +195,10 @@
                                             <a href="{{ route('stock.show', $product->id) }}">{{ $product->name }}</a>
                                         </td>
                                         <td class="text-muted">{{ $product->sku ?? '-' }}</td>
-                                        <td class="text-end">{{ number_format($product->pivot->price, 2) }}</td>
-                                        <td class="text-end text-danger">-{{ number_format($product->pivot->discount, 2) }}</td>
+                                        <td class="text-end">{{ '$' . number_format($product->pivot->price, 2) }}</td>
+                                        <td class="text-end text-danger">{{ $product->pivot->discount ? '%' . number_format($product->pivot->discount, 2) : '-' }}</td>
                                         <td class="text-end">{{ $product->pivot->amount }}</td>
-                                        <td class="text-end fw-bold">{{ number_format($product->pivot->total, 2) }}</td>
+                                        <td class="text-end fw-bold">{{ '$' . number_format($product->pivot->total, 2) }}</td>
                                     </tr>
                                     @empty
                                     <tr>
@@ -207,7 +209,7 @@
                                 <tfoot>
                                     <tr>
                                         <td colspan="5" class="text-end fw-bold">Grand Total:</td>
-                                        <td class="text-end fw-bold h3 m-0">{{ number_format($order->total_amount, 2) }}</td>
+                                        <td class="text-end fw-bold h3 m-0">{{ '$' . number_format($order->total_amount, 2) }}</td>
                                     </tr>
                                 </tfoot>
                             </table>
@@ -227,5 +229,5 @@
 @endsection
 
 @section('body_scripts')
-@vite(['resources/css/tabler/tabler-flags.min.css'])
+@vite(['resources/js/tom-select-js/tom-select.base.min.js', 'resources/css/tabler/tabler-flags.min.css'])
 @endsection

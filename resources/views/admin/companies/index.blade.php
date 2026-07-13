@@ -1,5 +1,7 @@
 @extends('layouts.admin.app')
 
+@section('title', 'Companies')
+
 @section('content')
 <div>
     {{-- Page Header --}}

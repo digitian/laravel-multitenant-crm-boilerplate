@@ -572,6 +572,10 @@
         tomSelectInstance.on('change', (values) => {
             $wire.$set('country', values);
         });
+
+        $wire.$watch('country', (value) => {
+            tomSelectInstance.setValue(value || '', true);
+        });
     }
 </script>
 @endscript

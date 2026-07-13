@@ -1,5 +1,7 @@
 @extends('layouts.authenticated.app')
 
+@section('title', 'Dashboard')
+
 @section('content')
 <!-- Page header -->
 <x-page-header title="Dashboard" pretitle="Welcome back, mösyö">

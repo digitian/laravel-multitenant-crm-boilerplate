@@ -36,8 +36,17 @@
                         {{-- Input: Price --}}
                         <div class="col-md-4">
                             <label for="product_price" class="form-label">Price</label>
-                            <input type="number" step="0.01" class="form-control" id="product_price" wire:model="form.price"
+                            <div class="input-icon">
+                                <span class="input-icon-addon">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M16.7 8a3 3 0 0 0 -2.7 -2h-4a3 3 0 0 0 0 6h4a3 3 0 0 1 0 6h-4a3 3 0 0 1 -2.7 -2" />
+                                    <path d="M12 3v3m0 12v3" />
+                                </svg>
+                                </span>
+                                <input type="number" step="0.01" class="form-control" id="product_price" wire:model="form.price"
                                 placeholder="0.00" min="0">
+                            </div>
                             <x-input-error :messages="$errors->get('form.price')" />
                         </div>
 

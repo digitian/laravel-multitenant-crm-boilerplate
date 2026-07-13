@@ -1,5 +1,7 @@
 @extends(auth()->user()->hasRole('admin') ? 'layouts.admin.app' : 'layouts.authenticated.app')
 
+@section('title', 'Settings')
+
 @section('content')
 {{-- Page Header --}}
 <x-page-header title="Settings" pretitle="You can view and edit your credentials here" />

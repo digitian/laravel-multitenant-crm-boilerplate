@@ -1,5 +1,7 @@
 @extends('layouts.authenticated.app')
 
+@section('title', $customer->first_name . ' ' . $customer->last_name . ' - Customer Details')
+
 @section('content')
 <div>
     {{-- Page Header --}}

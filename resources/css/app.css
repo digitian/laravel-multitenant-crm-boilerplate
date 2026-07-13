@@ -5,3 +5,7 @@
 .fl-wrapper {
     z-index: 9999 !important;
 }
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: var(--tblr-body-bg);
+}

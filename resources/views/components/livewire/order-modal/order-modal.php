@@ -29,18 +29,6 @@ new class extends Component
         $this->form->loadCustomerAddress();
     }
 
-    public function updatedFormItems($value, $key): void
-    {
-        // When a product is selected, auto-fill its price
-        if (str_ends_with($key, '.product_id') && $value) {
-            $index = explode('.', $key)[0];
-            $product = $this->products->firstWhere('id', $value);
-            if ($product) {
-                $this->form->items[$index]['price'] = $product->price;
-            }
-        }
-    }
-
     #[On('edit-order')]
     public function editOrder(int $orderId): void
     {

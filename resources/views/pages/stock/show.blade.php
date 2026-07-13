@@ -1,5 +1,7 @@
 @extends('layouts.authenticated.app')
 
+@section('title', $product->name . ' - Product Details')
+
 @section('content')
 <div>
     {{-- Page Header --}}
@@ -113,7 +115,7 @@
                                 </div>
                                 <div class="datagrid-item">
                                     <div class="datagrid-title">Price</div>
-                                    <div class="datagrid-content">{{ $product->price ? number_format($product->price, 2) : '—' }}</div>
+                                    <div class="datagrid-content">{{ $product->price ? '$' . number_format($product->price, 2) : '—' }}</div>
                                 </div>
                             </div>
                             

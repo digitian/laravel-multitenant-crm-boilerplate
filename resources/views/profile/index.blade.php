@@ -1,5 +1,7 @@
 @extends(auth()->user()->hasRole('admin') ? 'layouts.admin.app' : 'layouts.authenticated.app')
 
+@section('title', 'Profile')
+
 @section('content')
 {{-- Page Header --}}
 <x-page-header title="Profile" pretitle="View your public profile here" />
